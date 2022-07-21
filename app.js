@@ -59,6 +59,7 @@ function cardTestSetup(element){
     elementChild = element.childNodes
     element.classList.toggle('pointer-none')
     cardFlip(elementChild)
+    console.log(elementChild);
 }
 
 // Card Flip Back
@@ -85,6 +86,21 @@ function popUp(){
     modal.prepend(congrats)
 }
 
+// Card Toggle Victory
+function cardToggle(){
+    let cardsRecto = document.querySelectorAll('.recto')
+    let cardsVerso = document.querySelectorAll('.verso')
+
+    
+    setInterval(() => {
+        cardFlip(cardsRecto)
+    }, 1000);
+
+    setInterval(() => {
+        cardFlip(cardsVerso)
+    }, 1000);
+}
+
 // Card Comparison
 
 let arrayTest = []
@@ -96,12 +112,13 @@ function cardComparison(){
     cards.forEach(card => {
 
         card.addEventListener('click', function () {
-            console.log(arrayPairs.length)
+            // console.log(arrayPairs.length)
             if(arrayPairs.length === 10){
                 cardTestSetup(card)
                 setTimeout(() => {
                     popUp()
                 }, 1000);
+                cardToggle()
             } else {
                 
                 if (arrayTest.length < 2) {

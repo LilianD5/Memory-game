@@ -43,7 +43,8 @@ body{
 
 .verso{
     position: absolute;
-    background-color: #62BFAD;
+    background: url('./back.jpg') no-repeat center;
+    background-size: 80%;
     border: 2px solid transparent;
     border-radius: 5%;
     height: 100%;
@@ -64,12 +65,9 @@ body{
 .popup{
     position: absolute;
     top: 30vh;
-    left: 20vw;
+    left: 60vw;
     z-index: 1;
-    background-color: #fff;
-    border-radius: 50px;
-    border: 2px solid #000;
-    width: 60vw;
+    width: 40vw;
     height: 40vh;
 }
 
